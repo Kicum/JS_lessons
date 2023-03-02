@@ -5,13 +5,13 @@ numberOne = prompt(`Input first number`);
 numberTwo = prompt(`Input second number`); 
 
 if (numberOne === null || numberOne === '' || numberTwo == null || numberTwo === '') {
-    alert ("Ooops we got a trouble")
+    alert ("Ooops we got a trouble!")
 
 }else if (numberTwo === '0') {
     alert(`Addition result is : ${+numberOne + +numberTwo}!`);
     alert(`Subtraction  result is : ${Number(numberOne) - Number(numberTwo)}!`);
     alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-    alert(`Division result is a mistake!`);
+    alert(`Division result is a MISTAKE!`);
 
 }else if (numberOne < numberTwo) {
     if (confirm('Are you sure?') === true){
