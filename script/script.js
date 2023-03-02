@@ -4,34 +4,21 @@ let numberTwo = 0;
 numberOne = prompt(`Input first number`); 
 numberTwo = prompt(`Input second number`); 
 
-if (numberOne === null || numberOne === '' || numberTwo == null || numberTwo === '') {
+if (!numberOne || !numberTwo ) {
     alert ("Ooops we got a trouble!")
+}  else {
+    numberOne = Number(numberOne)
+    numberTwo = Number(numberTwo)
+    let answer = true
 
-}else if (numberTwo === '0') {
-    alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-    alert(`Subtraction  result is : ${Number(numberOne) - Number(numberTwo)}!`);
-    alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-    alert(`Division result is a MISTAKE!`);
-
-}else if (numberOne < numberTwo) {
-    if (confirm('Are you sure?') === true){
-        alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-        alert(`Subtraction  result is : ${+(numberOne) - +(numberTwo)}!`);
-        alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-        alert(`Division result is : ${+(numberOne) / +(numberTwo)}!`);
-
-    } else {
-        alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-        alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-        alert(`Division result is : ${+(numberOne) / +(numberTwo)}!`);
-    }
+    let divFunc = numberTwo ? (numberOne / numberTwo) : 'a MISTAKE!!!!'
     
-     
-} else {
-    alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-    alert(`Subtraction  result is : ${Number(numberOne) - Number(numberTwo)}!`);
-    alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-    alert(`Division result is : ${parseInt(numberOne) / parseInt(numberTwo)}!`);
+    if (numberOne < numberTwo) answer = confirm('Are you sure?')
+
+    alert(`Addition result is  ${numberOne + numberTwo}!`);
+    if(answer) alert(`Subtraction  result is  ${numberOne - numberTwo}!`);
+    alert(`Multiplication  result is  ${numberOne * numberTwo}!`);
+    alert(`Division result is  ${divFunc}`);
 }
 
 
