@@ -10,27 +10,27 @@ if (numberOne === null || numberOne === '' || numberTwo == null || numberTwo ===
 }else if (numberTwo === '0') {
     alert(`Addition result is : ${+numberOne + +numberTwo}!`);
     alert(`Subtraction  result is : ${Number(numberOne) - Number(numberTwo)}!`);
-    alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
+    alert(`Multiplication  result is : ${+numberOne * +numberTwo}!`);
     alert(`Division result is a MISTAKE!`);
 
-}else if (numberOne < numberTwo) {
+}else if (+numberOne < +numberTwo) {
     if (confirm('Are you sure?') === true){
         alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-        alert(`Subtraction  result is : ${+(numberOne) - +(numberTwo)}!`);
-        alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-        alert(`Division result is : ${+(numberOne) / +(numberTwo)}!`);
+        alert(`Subtraction  result is : ${+numberOne - +numberTwo}!`);
+        alert(`Multiplication  result is : ${+numberOne * +numberTwo}!`);
+        alert(`Division result is : ${+numberOne / +numberTwo}!`);
 
     } else {
         alert(`Addition result is : ${+numberOne + +numberTwo}!`);
-        alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
-        alert(`Division result is : ${+(numberOne) / +(numberTwo)}!`);
+        alert(`Multiplication  result is : ${+numberOne * +numberTwo}!`);
+        alert(`Division result is : ${+numberOne / +numberTwo}!`);
     }
     
      
 } else {
     alert(`Addition result is : ${+numberOne + +numberTwo}!`);
     alert(`Subtraction  result is : ${Number(numberOne) - Number(numberTwo)}!`);
-    alert(`Multiplication  result is : ${+(numberOne) * +(numberTwo)}!`);
+    alert(`Multiplication  result is : ${+numberOne * +numberTwo}!`);
     alert(`Division result is : ${parseInt(numberOne) / parseInt(numberTwo)}!`);
 }
 
