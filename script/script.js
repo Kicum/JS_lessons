@@ -1,14 +1,30 @@
-let numberOne = 0;
-let numberTwo = 0;
+function initNumbers() {
+    let numberOne = null;
+    let numberTwo = null;
+    numberOne = prompt(`Input first number`); 
+    numberTwo = prompt(`Input second number`); 
+    return [numberOne, numberTwo]
+}
 
-numberOne = prompt(`Input first number`); 
-numberTwo = prompt(`Input second number`); 
+function validateNumbers (arr) {
+    if( !arr[0]) {
+        return false
+    } else if (!arr[1] ) {
+        return false
+     } else if (isNaN(+arr[0])) {
+        return false
+     } else if (isNaN(+arr[1])) {
+        return false
+     } else {
+        return true
+    }
 
-if (!numberOne || !numberTwo ) {
-    alert ("Ooops we got a trouble!")
-}  else {
-    numberOne = Number(numberOne)
-    numberTwo = Number(numberTwo)
+}
+
+function getCalc (arr) {
+    let numberOne = +arr[0];
+    let numberTwo = +arr[1];
+
     let answer = true
 
     let divFunc = numberTwo ? (numberOne / numberTwo) : 'a MISTAKE!!!!'
@@ -21,4 +37,16 @@ if (!numberOne || !numberTwo ) {
     alert(`Division result is  ${divFunc}`);
 }
 
+function calcNumbers() {
+    const arr = initNumbers()
+    const isValid = validateNumbers(arr)
 
+    if (!isValid) {
+        alert ("Ooops we got a trouble!")
+        return
+    }
+
+    getCalc(arr)
+}
+
+calcNumbers()
