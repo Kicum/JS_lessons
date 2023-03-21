@@ -47,3 +47,38 @@ function findMinMax (array) {
 }
 console.log(findMinMax(array))
 
+// lesson 25
+
+const user = {
+    name: 'Serhii',
+    age: 32,
+    sayHello() {
+        console.log(`Hi, my name is ${this.name}, my age is ${this.age}`)
+    }
+}
+
+function isEmpty (obj) {
+    return Object.keys(obj).length === 0
+}
+console.log(isEmpty(user))
+user.sayHello()
+
+const calc = {
+    one: null,
+    two: null,
+    ask() {
+        this.one = Number(prompt(`Input first number`)); 
+        this.two = Number(prompt(`Input second number`)); 
+    }, 
+    sum(){
+        return this.one + this.two
+    }, 
+    mul(){
+        return this.one * this.two
+    },
+
+}
+
+calc.ask()
+console.log(calc.sum())
+console.log(calc.mul())
