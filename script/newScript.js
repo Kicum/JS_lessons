@@ -82,3 +82,33 @@ const calc = {
 calc.ask()
 console.log(calc.sum())
 console.log(calc.mul())
+
+
+//Lesson 26
+
+function Accumulator(num) {
+this.num = num
+
+this.increment = () => {
+   this.num ++
+}
+
+this.decrement = () => {
+    this.num --
+ }
+}
+
+function CancelableAccumulator(num) {
+    Accumulator.call(this, num)
+    this.clear = () => {
+        this.num = num
+    }
+}
+
+let num = new CancelableAccumulator(3)
+console.log(num)
+num.increment()
+console.log(num)
+num.decrement()
+num.clear()
+console.log(num)
